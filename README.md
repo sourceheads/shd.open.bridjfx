@@ -5,6 +5,11 @@ Convenience utilities to access native Windows functions for Java FX 8 using Bri
 
 Work in progress.
 
+Dependencies
+------------
+
+* BridJ (https://code.google.com/p/bridj/)
+
 License
 -------
 
