@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  *
  * @author Stefan Fiedler
  */
-public class TaskbarListDemo extends Application {
+public class TaskbarListProgressDemo extends Application {
 
     protected TaskbarList taskbarList;
 
@@ -43,7 +43,7 @@ public class TaskbarListDemo extends Application {
 
         final Scene scene = new Scene(vBox);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("TaskbarList testing");
+        primaryStage.setTitle("TaskbarList progress demo");
 
         primaryStage.show();
 
@@ -62,7 +62,7 @@ public class TaskbarListDemo extends Application {
         taskbarList.destroy();
     }
 
-    public static void main(final String[] args) throws ClassNotFoundException {
+    public static void main(final String... args) {
         launch(args);
     }
 
