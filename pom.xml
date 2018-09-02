@@ -12,7 +12,7 @@
         <dependency>
             <groupId>com.nativelibs4java</groupId>
             <artifactId>bridj</artifactId>
-            <version>0.6.2</version>
+            <version>0.7.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.google.android.tools</groupId>
@@ -28,10 +28,15 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>3.8.0</version>
                     <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
+                        <source>10</source>
+                        <target>10</target>
+                        <compilerArgs>
+                            <arg>--add-modules=javafx.base</arg>
+                            <arg>--add-modules=javafx.controls</arg>
+                            <arg>--add-modules=javafx.graphics</arg>
+                        </compilerArgs>
                     </configuration>
                 </plugin>
             </plugins>

@@ -104,7 +104,7 @@ public class TaskbarList {
      * on MSDN.</p>
      *
      * @param completed Completed value
-     * @param total     Total value
+     * @param total Total value
      */
     public void setProgressValue(final long completed, final long total) {
         queue.offer(() -> taskbarList.SetProgressValue(hWnd, completed, total));
@@ -112,8 +112,9 @@ public class TaskbarList {
 
     private static Pointer<Integer> getWindowHwnd(final Window window) {
         try {
-            final Method impl_getPeer = window.getClass().getMethod("impl_getPeer");
-            final Object tkStage = impl_getPeer.invoke(window);
+            final Method getPeer = Window.class.getDeclaredMethod("getPeer");
+            getPeer.setAccessible(true);
+            final Object tkStage = getPeer.invoke(window);
             final Method getPlatformWindow = tkStage.getClass().getDeclaredMethod("getPlatformWindow");
             getPlatformWindow.setAccessible(true);
             final Object platformWindow = getPlatformWindow.invoke(tkStage);
